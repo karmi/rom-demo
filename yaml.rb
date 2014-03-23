@@ -3,9 +3,9 @@ require 'fileutils'
 
 require './lib/yaml_adapter'
 
-FileUtils.rm('db/sample.yml') if File.exist?('db/sample.yml')
+FileUtils.rm('database.yml') if File.exist?('database.yml')
 
-rom = ROM::Environment.setup(yaml: 'yaml://db/sample.yml')
+rom = ROM::Environment.setup(yaml: 'yaml://database.yml')
 
 rom.schema do
   base_relation :users do
